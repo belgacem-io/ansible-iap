@@ -1,0 +1,9 @@
+---
+- name: Demo playbook
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Display all variables/facts known for a host
+      debug:
+        var: hostvars[inventory_hostname]
+      tags: debug_info

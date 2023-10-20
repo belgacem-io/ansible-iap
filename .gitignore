@@ -1,0 +1,30 @@
+# Terrafrom local temporary files
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+.terraform.tfstate.lock.info
+
+# Terragrunt local temporary files
+.terragrunt-cache/
+.terragrunt-*
+terragrunt-debug.tfvars.json
+
+# Local temporary modules
+main-debug/
+
+# IDE config folders
+.idea/*
+.vs_code
+.vs_code/*
+
+# Temporary build folders
+.build
+.tls/*
+.gcloud/*
+
+# Local env config files
+terraform.tfvars
+backend.tf
+gke.tf
+

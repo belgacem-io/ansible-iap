@@ -1,0 +1,24 @@
+plugin: google.cloud.gcp_compute
+projects:
+  -
+filters:
+  - status = RUNNING
+  - scheduling.automaticRestart = true AND status = RUNNING
+auth_kind: application
+keyed_groups:
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
+  - key: (tags.items|list)
+    prefix: tag
+  - key: project
+    prefix: project
+groups:
+  bastion : "'bastion' in name"
+hostnames:
+  # List host by name instead of the default public ip
+  - name
+compose:
+  # Set an inventory parameter to use the Public IP address to connect to the host
+  ansible_host: selfLink
